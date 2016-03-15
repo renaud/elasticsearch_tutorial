@@ -7,3 +7,4 @@ Installing ElasticSearch is quite simple, go to [the installation page of the El
 Install both ElasticSearch & the Sense plugin for Kibana.
 
 ## Exercise 1: the basics
+[Load exercise 1](https://raw.githubusercontent.com/ThijsFeryn/elasticsearch_tutorial/master/1_basics.json)
