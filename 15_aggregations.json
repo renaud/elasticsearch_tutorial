@@ -1,0 +1,153 @@
+#List the top 10 most popular bloggers
+POST /blog/_search
+{
+  "size": 0, 
+  "aggs": {
+    "popular_bloggers": {
+      "terms": {
+        "field": "author",
+        "size": 10
+      }
+    }
+  }
+}
+#List the top 10 most popular bloggers and the languages they write in
+POST /blog/_search
+{
+  "size": 0, 
+  "aggs": {
+    "popular_bloggers": {
+      "terms": {
+        "field": "author",
+        "size": 10
+      },
+      "aggs": {
+        "used_languages": {
+          "terms": {
+            "field": "language",
+            "size": 10
+          }
+        }
+      }
+    }
+  }
+}
+#Number of blog posts written in Dutch per month in 2015
+POST /blog/_search
+{
+  "size": 0,
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "range": {
+            "date": {
+              "gte": "2015-01-01",
+              "lte": "2015-12-31",
+              "format": "yyyy-MM-dd"
+            }
+          }
+        },
+        {
+          "filtered": {
+            "filter": {
+              "term": {
+                "language": "nl-NL"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "number_of_posts_per_month_in_2015": {
+      "date_histogram": {
+        "field": "date",
+        "interval": "month",
+        "format": "MMMM"
+      }
+    }
+  }
+}
+#List the top 3 most popular cars
+POST /cars/_search
+{
+  "size": 0, 
+  "aggs": {
+    "popular_cars": {
+      "terms": {
+        "field": "make",
+        "size": 3
+      }
+    }
+  }
+}
+#Average price for a car
+POST /cars/_search
+{
+  "size": 0, 
+  "aggs": {
+    "average_price": {
+      "avg": {
+        "field": "price"
+      }
+    }
+  }
+}
+#Extended statistics about the price of a car
+POST /cars/_search
+{
+  "size": 0, 
+  "aggs": {
+    "average_price": {
+      "extended_stats": {
+        "field": "price"
+      }
+    }
+  }
+}
+#Total revenue for cars per price range with an interval of 20000
+POST /cars/transactions/_search
+{
+   "size" : 0,
+   "aggs":{
+      "price":{
+         "histogram":{ 
+            "field": "price",
+            "interval": 20000
+         },
+         "aggs":{
+            "revenue": {
+               "sum": { 
+                 "field" : "price"
+               }
+             }
+         }
+      }
+   }
+}
+#Average price of a Ford vs the total average price of all cars
+POST /cars/transactions/_search
+{
+    "size" : 0,
+    "query" : {
+        "match" : {
+            "make" : "ford"
+        }
+    },
+    "aggs" : {
+        "single_avg_price": {
+            "avg" : { "field" : "price" } 
+        },
+        "all": {
+            "global" : {}, 
+            "aggs" : {
+                "avg_price": {
+                    "avg" : { "field" : "price" } 
+                }
+
+            }
+        }
+    }
+}

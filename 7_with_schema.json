@@ -1,0 +1,25 @@
+#Find blog post that have an id between 100 & 150, with schema
+POST /blog/_search
+{
+  "query": {
+    "range": {
+      "guid": {
+        "gte": 100,
+        "lte": 150
+      }
+    }
+  }
+}
+#Find blog posts written in January 2016, with schema
+POST /blog/_search
+{
+  "query": {
+    "range": {
+      "date": {
+        "gte": "2016-01-01",
+        "lt": "2016-02-01",
+        "format": "yyyy-MM-dd"
+      }
+    }
+  }
+}
