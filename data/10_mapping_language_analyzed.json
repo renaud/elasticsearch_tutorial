@@ -14,7 +14,11 @@ PUT /blog/
             "en": {
               "type": "string",
               "analyzer": "english"
-            }
+            },
+            "raw": {
+              "type": "string",
+              "index": "not_analyzed"
+            }            
           }
         },
         "date": {

@@ -10,18 +10,18 @@ POST /blog/_search
       },
       "filter": {
         "prefix": {
-          "title": "My Combell Power Tips:"
+          "title.raw": "My Combell Power Tips:"
         }
       }
     }
   }
 }
-#Execute a query on the title.raw field which is analyzed
+#Execute a query on the title field which is analyzed
 POST /blog/_search
 {
   "query": {
     "match": {
-      "title.raw": "Tips:"
+      "title": "Tips:"
     }
   }
 }
