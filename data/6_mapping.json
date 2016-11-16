@@ -5,17 +5,17 @@ PUT /blog/
     "post" : {
       "properties": {
         "title" : {
-          "type" : "string"
+          "type" : "text"
         },
         "date"  : {
           "type" : "date",
           "format": "E, dd MMM YYYY HH:mm:ss Z"
         },
         "author": {
-          "type": "string"
+          "type": "text"
         },        
         "category": {
-          "type": "string"
+          "type": "text"
           
         },
         "guid": {

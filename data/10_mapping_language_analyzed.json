@@ -8,16 +8,15 @@ PUT /blog/
           "type": "string",
           "fields": {
             "nl": {
-              "type": "string",
+              "type": "text",
               "analyzer": "dutch"
             },
             "en": {
-              "type": "string",
+              "type": "text",
               "analyzer": "english"
             },
             "raw": {
-              "type": "string",
-              "index": "not_analyzed"
+              "type": "keyword"
             }            
           }
         },
@@ -26,16 +25,13 @@ PUT /blog/
           "format": "E, dd MMM YYYY HH:mm:ss Z"
         },
         "language": {
-          "type": "string",
-          "index": "not_analyzed"
+          "type": "keyword"
         },
         "author": {
-          "type": "string",
-          "index": "not_analyzed"
+          "type": "keyword"
         },
         "category": {
-          "type": "string",
-          "index": "not_analyzed"
+          "type": "keyword"
         },
         "guid": {
           "type": "integer"
