@@ -9,8 +9,7 @@ PUT /cities
           "index" : "not_analyzed"
         },
         "location": {
-          "type": "geo_point",
-          "lat_lon": true              
+          "type": "geo_point"       
         }
       }
     }

@@ -1,18 +1,11 @@
 #Get the mapping of the blog index
 GET /blog/_mapping
-#Perform a prefix filter call (instead of a query) on the non-analyzed values
+#Perform a prefix query on the non-analyzed values
 POST /blog/_search
 {
   "query": {
-    "filtered": {
-      "query": {
-        "match_all": {}
-      },
-      "filter": {
-        "prefix": {
-          "title.raw": "My Combell Power Tips:"
-        }
-      }
+    "prefix": {
+       "title.raw": "My Combell Power Tips:"
     }
   }
 }
@@ -29,14 +22,12 @@ POST /blog/_search
 POST /blog/_search
 {
   "query": {
-    "filtered": {
-      "filter": {
-        "bool": {
-          "must" : [
-            {
-              "term" : {
-                "language" : "en-US"
-              }
+    "bool": {
+      "must" : [
+          {
+             "term" : {
+             "language" : "en-US"
+           }
             },
             {
               "range" : {

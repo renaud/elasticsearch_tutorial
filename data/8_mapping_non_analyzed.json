@@ -5,7 +5,7 @@ PUT /blog/
     "post" : {
       "properties": {
         "title" : {
-          "type" : "string"
+          "type" : "string",
           "fields": {
             "raw": {
               "type": "string",

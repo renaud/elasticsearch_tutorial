@@ -10,10 +10,13 @@ POST /cities/city/_search
     }
   ], 
   "query": {
-    "filtered": {
+    "bool" : {
+      "must" : {
+        "match_all" : {}
+      },
       "filter": {
-        "geo_distance_range": {
-          "lt":     "5km", 
+        "geo_distance": {
+          "distance":     "5km", 
           "location": {
             "lat": 51.033333, 
             "lon": 2.866667
@@ -21,7 +24,7 @@ POST /cities/city/_search
           }
         }
       }
-    }
+    }  
   }
 }
 #Draw a bounding box that contains Koksijde & Nieuwpoort
@@ -29,24 +32,25 @@ POST /cities/city/_search
 {
   "size": 200, 
   "query": {
-    "filtered": {
-      "query": {
-        "match_all": {}
-      }, 
+    "bool" : {
+      "must" : {
+        "match_all" : {}
+      },
       "filter": {
         "geo_bounding_box": {
-          "location": {
-            "bottom_left": {
-              "lat": 51.1,
-              "lon": 2.6
-            },
-            "top_right": {
-              "lat": 51.2,
-              "lon": 2.7
+            "location": {
+              "bottom_left": {
+                "lat": 51.1,
+                "lon": 2.6
+              },
+              "top_right": {
+                "lat": 51.2,
+                "lon": 2.7
+              }
             }
           }
         }
       }
-    }
+    }  
   }
 }
