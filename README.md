@@ -182,7 +182,7 @@ These are the aggregations we'll execute in this exercise:
 
 * Get the top 10 most popular authors of the Combell blog
 * Get the top 10 most popular authors of the Combell blog and display how many posts they wrote in each language
-* Get all the blog posts written in Dutch that were published in 2015. Use aggregations to see the amount per month
+* Get all the blog posts written in Dutch that were published in 2016. Use aggregations to see the amount per month
 * Get the top 3 most popular cars
 * Get the average price of a sold car
 * Get extended statistics on the price of a sold car
