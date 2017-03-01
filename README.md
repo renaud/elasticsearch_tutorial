@@ -1,3 +1,10 @@
+# Disclaimer
+This tutorial is built for ElasticSearch version 2.x. This is an old version. 
+
+Version 5 is now available and features a bunch of [breaking changes](https://www.elastic.co/guide/en/elasticsearch/reference/current/breaking-changes-5.0.html) in terms of query DSL and mapping.
+
+**To see the updated version of the tutorial, please go to the [master branch of this repository](https://github.com/ThijsFeryn/elasticsearch_tutorial/blob/master/README.md)**
+
 # ElasticSearch examples
 I've lined up a bunch of examples to showcase the features and the sheer power of [ElasticSearch](https://www.elastic.co/products/elasticsearch). A lot of the information is based on ["ElasticSearch, The Definitive Guide"](https://www.elastic.co/guide/en/elasticsearch/guide/current/index.html)
 
