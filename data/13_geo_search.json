@@ -10,7 +10,7 @@ POST /cities/city/_search
     }
   ], 
   "query": {
-    "bool" : {
+    "bool": {
       "must" : {
         "match_all" : {}
       },
@@ -32,10 +32,7 @@ POST /cities/city/_search
 {
   "size": 200, 
   "query": {
-    "bool" : {
-      "must" : {
-        "match_all" : {}
-      },
+    "bool": {
       "filter": {
         "geo_bounding_box": {
             "location": {
