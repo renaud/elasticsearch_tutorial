@@ -1,15 +1,18 @@
+# Disclaimer
+This tutorial is built for ElasticSearch version 5.2. Version 5 features a bunch of [breaking changes](https://www.elastic.co/guide/en/elasticsearch/reference/current/breaking-changes-5.0.html) in terms of query DSL and mapping.
+
+**If you're still running version 2.x, please have a look at the [v2 branch of this repository](https://github.com/ThijsFeryn/elasticsearch_tutorial/blob/v2/README.md)**
+
 # ElasticSearch examples
 I've lined up a bunch of examples to showcase the features and the sheer power of [ElasticSearch](https://www.elastic.co/products/elasticsearch). A lot of the information is based on ["ElasticSearch, The Definitive Guide"](https://www.elastic.co/guide/en/elasticsearch/guide/current/index.html)
 
 ## Installing
 Installing ElasticSearch is quite simple, go to [the installation page of the ElasticSearch guide](https://www.elastic.co/guide/en/elasticsearch/guide/current/running-elasticsearch.html).
 
-* Install both ElasticSearch & the Sense plugin for Kibana.
+* Install both ElasticSearch & Kibana.
 * Run ElasticSearch `./bin/elasticsearch`
 * Run Kibana `./bin/kibana`
-* Access Kibana by using [http://localhost:5601](http://localhost:5601)
-* Use the Sense plugin by accessing [http://localhost:5601/app/sense](http://localhost:5601/app/sense)
-* Use [http://localhost:9200](http://localhost:9200) as the default ElasticSearch server
+* Use the Kibana console by accessing [http://localhost:5601/app/kibana#/dev_tools/console](http://localhost:5601/app/kibana#/dev_tools/console)
 
 ## Exercise 1: the basics
 Exercise 1 is very simple and the goal is to get the hang of the ElasticSearch RESTFul interface.
@@ -25,7 +28,7 @@ Topics:
 * Retrieve individual documents
 * Searching all documents for a specific index
 
-[Load exercise 1 in Sense](http://localhost:5601/app/sense?load_from=https://raw.githubusercontent.com/ThijsFeryn/elasticsearch_tutorial/master/data/1_basics.json)
+[Load exercise 1](http://localhost:5601/app/kibana#/dev_tools/console?load_from=https://raw.githubusercontent.com/ThijsFeryn/elasticsearch_tutorial/master/data/1_basics.json)
 
 ## Exercise 2: load data in bulk
 In exercise 2 we will be indexing a lot of data. To improve the performance, we're doing this in bulk.
@@ -41,7 +44,7 @@ This data contains information from the [Combell blog](http://blog.combell.com).
 
 This data will be used in the other exercises
 
-[Load the blog data in bulk via Sense](http://localhost:5601/app/sense?load_from=https://raw.githubusercontent.com/ThijsFeryn/elasticsearch_tutorial/master/data/2_blog_data_bulk.json)
+[Load the blog data in bulk](http://localhost:5601/app/kibana#/dev_tools/console?load_from=https://raw.githubusercontent.com/ThijsFeryn/elasticsearch_tutorial/master/data/2_blog_data_bulk.json)
 
 ## Exercise 3: search, getting to know the query DSL
 In exercise 3 we're performing some basic queries using the ElasticSearch query DSL. The DSL is JSON-based and the queries are full-text searches.
@@ -54,7 +57,7 @@ Here's a couple of searches we're performing:
 * Define the minimum number of matches a document should have
 * Define the proximity of terms you're searching
 
-[Load exercise 3 in Sense](http://localhost:5601/app/sense?load_from=https://raw.githubusercontent.com/ThijsFeryn/elasticsearch_tutorial/master/data/3_search.json)
+[Load exercise 3](http://localhost:5601/app/kibana#/dev_tools/console?load_from=https://raw.githubusercontent.com/ThijsFeryn/elasticsearch_tutorial/master/data/3_search.json)
 
 
 ## Exercise 4: analysis
@@ -62,7 +65,7 @@ In exercise 4, we're going to focus on the analysis of full-text and human langu
 
 Depending on the analyzer you use, ElasticSearch will tokenize and store the data in a different way. Don't worry, the original data will remain in the source of the document, it's the inverted index that changes.
 
-[Load exercise 4 in Sense](http://localhost:5601/app/sense?load_from=https://raw.githubusercontent.com/ThijsFeryn/elasticsearch_tutorial/master/data/4_analysis.json)
+[Load exercise 4](http://localhost:5601/app/kibana#/dev_tools/console?load_from=https://raw.githubusercontent.com/ThijsFeryn/elasticsearch_tutorial/master/data/4_analysis.json)
 
 
 ## Exercise 5: schemaless? Not really.
@@ -70,7 +73,7 @@ Exercise 5 is all about the schema of an index. ElasticSearch is marketed as bei
 
 I'll show you examples where it guesses successfully and examples where it doesn't.
 
-[Load exercise 5 in Sense](http://localhost:5601/app/sense?load_from=https://raw.githubusercontent.com/ThijsFeryn/elasticsearch_tutorial/master/data/5_schemaless.json)
+[Load exercise 5](http://localhost:5601/app/kibana#/dev_tools/console?load_from=https://raw.githubusercontent.com/ThijsFeryn/elasticsearch_tutorial/master/data/5_schemaless.json)
 
 
 ## Exercise 6: mapping
@@ -80,7 +83,7 @@ Integers and strings will be defined accordingly and the date will have the righ
 
 The explicit mapping will be used in Exercise 7.
 
-[Load exercise 6 in Sense](http://localhost:5601/app/sense?load_from=https://raw.githubusercontent.com/ThijsFeryn/elasticsearch_tutorial/master/data/6_mapping.json)
+[Load exercise 6](http://localhost:5601/app/kibana#/dev_tools/console?load_from=https://raw.githubusercontent.com/ThijsFeryn/elasticsearch_tutorial/master/data/6_mapping.json)
 
 
 ## Exercise 7: search using explicit mapping
@@ -89,7 +92,7 @@ The 2 searches in exercise 5 that failed, will not be executed again. Thanks to 
 * Query 1 won't return anything, because the range doesn't match
 * Query 2 will return the documents that fit the data range
 
-[Load exercise 7 in Sense](http://localhost:5601/app/sense?load_from=https://raw.githubusercontent.com/ThijsFeryn/elasticsearch_tutorial/master/data/7_with_schema.json)
+[Load exercise 7](http://localhost:5601/app/kibana#/dev_tools/console?load_from=https://raw.githubusercontent.com/ThijsFeryn/elasticsearch_tutorial/master/data/7_with_schema.json)
 
 
 ## Exercise 8: non-analyzed fields
@@ -97,23 +100,24 @@ In exercise 8, we will define yet another mapping on our blog index. This mappin
 
 This data will be used in exercise 9
 
-[Load exercise 8 in Sense](http://localhost:5601/app/sense?load_from=https://raw.githubusercontent.com/ThijsFeryn/elasticsearch_tutorial/master/data/8_mapping_non_analyzed.json)
+[Load exercise 8](http://localhost:5601/app/kibana#/dev_tools/console?load_from=https://raw.githubusercontent.com/ThijsFeryn/elasticsearch_tutorial/master/data/8_mapping_non_analyzed.json)
 
 
 ## Exercise 9: filters, full-text vs exact values
-In exercise 9 I'll show you the difference between full-text searches using queries and exact value matches using filters.
+In exercise 9 I'll show you the difference between full-text searches using queries and exact value matches using queries in filter mode.
 
-The mapping that was done in exercise 8 has made sure there is now a *"raw"* field on the title property. this means that queries on "title.raw" are treated as full-text searches and filters on the regular *"title"* field are treated as exact value matches.
+The mapping that was done in exercise 8 has made sure there is now a *"raw"* field on the title property. this means that queries on "title.raw" are treated as full-text searches and boolean filters on the regular *"title"* field are treated as exact value matches.
 
 In one of the examples, I'll also show you how to combine multiple queries and filters.
 
 This is what we'll do in this exercise:
 
-* Use a prefix filter to perform a wildcard search even if the fields are not analyzed
+* Use a prefix query in filter context to perform a wildcard search even if the fields are not analyzed
 * Do a standard query using the *"raw"* field
-* Use a boolean filter to combine multiple filters based on the *"and"*, *"or"* & *"not"* operators
+* Use a boolean query in filter mode to combine multiple filters based on the *"and"*, *"or"* & *"not"* operators
+* Use a regular boolean query and notice how the behaviour of the *(should)* clause changes
 
-[Load exercise 9 in Sense](http://localhost:5601/app/sense?load_from=https://raw.githubusercontent.com/ThijsFeryn/elasticsearch_tutorial/master/data/9_filters.json)
+[Load exercise 9](http://localhost:5601/app/kibana#/dev_tools/console?load_from=https://raw.githubusercontent.com/ThijsFeryn/elasticsearch_tutorial/master/data/9_queries_and_filters.json)
 
 
 ## Exercise 10: language-based mapping
@@ -124,7 +128,7 @@ We will **again** remap the data. This time, we will treat the *"title"* propert
 
 This is the final version of the mapping. The other example will use the mapping and the data.
 
-[Load exercise 10 in Sense](http://localhost:5601/app/sense?load_from=https://raw.githubusercontent.com/ThijsFeryn/elasticsearch_tutorial/master/data/10_mapping_language_analyzed.json)
+[Load exercise 10](http://localhost:5601/app/kibana#/dev_tools/console?load_from=https://raw.githubusercontent.com/ThijsFeryn/elasticsearch_tutorial/master/data/10_mapping_language_analyzed.json)
 
 
 ## Exercise 11: using languages
@@ -135,7 +139,7 @@ Exercise 11 is all about the analyis of text based on the language. Exercise 4 w
 * Query 3 will look for the term *"werk"* on the *"title"* property
 * Query 2 will look for the term *"werk"* on the *"title.nl"* field (which uses the Dutch analyzer)
 
-[Load exercise 11 in Sense](http://localhost:5601/app/sense?load_from=https://raw.githubusercontent.com/ThijsFeryn/elasticsearch_tutorial/master/data/11_kabguages.json)
+[Load exercise 11](http://localhost:5601/app/kibana#/dev_tools/console?load_from=https://raw.githubusercontent.com/ThijsFeryn/elasticsearch_tutorial/master/data/11_kabguages.json)
 
 
 ## Exercise 12: geo data
@@ -144,7 +148,7 @@ In exercise 12 we'll create a new *"cities"* index that contains all cities that
 
 The explicit mapping and the data will be used in other exercises.
 
-[Load exercise 12 in Sense](http://localhost:5601/app/sense?load_from=https://raw.githubusercontent.com/ThijsFeryn/elasticsearch_tutorial/master/data/12_geo_data.json)
+[Load exercise 12](http://localhost:5601/app/kibana#/dev_tools/console?load_from=https://raw.githubusercontent.com/ThijsFeryn/elasticsearch_tutorial/master/data/12_geo_data.json)
 
 
 ## Exercise 13: geo searches
@@ -155,7 +159,7 @@ In the previous exercise, we created a new index and indexed some geo data. In e
 * A query that displays all cities in a proximity of 5km from Diksmuide
 * A query that displays all cities that are located in a specific bounding box (between Koksijde & Nieuwpoort)
 
-[Load exercise 13 in Sense](http://localhost:5601/app/sense?load_from=https://raw.githubusercontent.com/ThijsFeryn/elasticsearch_tutorial/master/data/13_geo_search.json)
+[Load exercise 13](http://localhost:5601/app/kibana#/dev_tools/console?load_from=https://raw.githubusercontent.com/ThijsFeryn/elasticsearch_tutorial/master/data/13_geo_search.json)
 
 
 ## Excercise 14: aggregation data
@@ -168,7 +172,7 @@ In exercise 14, we'll load data into yet another index. This index is called *"c
 
 This information will be used in exercise 15.
 
-[Load exercise 14 in Sense](http://localhost:5601/app/sense?load_from=https://raw.githubusercontent.com/ThijsFeryn/elasticsearch_tutorial/master/data/14_aggregation_data.json)
+[Load exercise 14](http://localhost:5601/app/kibana#/dev_tools/console?load_from=https://raw.githubusercontent.com/ThijsFeryn/elasticsearch_tutorial/master/data/14_aggregation_data.json)
 
 
 ## Exercise 15: performing aggregations
@@ -185,4 +189,4 @@ These are the aggregations we'll execute in this exercise:
 * Get the total revenue for cars per price range with an interval of 20000 USD
 * Calculate the average price of a Ford versys the total average price of all cars that were sold
 
-[Load exercise 15 in Sense](http://localhost:5601/app/sense?load_from=https://raw.githubusercontent.com/ThijsFeryn/elasticsearch_tutorial/master/data/15_aggregations.json)
+[Load exercise 15](http://localhost:5601/app/kibana#/dev_tools/console?load_from=https://raw.githubusercontent.com/ThijsFeryn/elasticsearch_tutorial/master/data/15_aggregations.json)

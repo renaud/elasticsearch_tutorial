@@ -10,10 +10,10 @@ POST /cities/city/_search
     }
   ], 
   "query": {
-    "filtered": {
+    "bool": {
       "filter": {
-        "geo_distance_range": {
-          "lt":     "5km", 
+        "geo_distance": {
+          "dinstance": "5km",
           "location": {
             "lat": 51.033333, 
             "lon": 2.866667
@@ -29,10 +29,7 @@ POST /cities/city/_search
 {
   "size": 200, 
   "query": {
-    "filtered": {
-      "query": {
-        "match_all": {}
-      }, 
+    "bool": {
       "filter": {
         "geo_bounding_box": {
           "location": {

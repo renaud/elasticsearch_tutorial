@@ -5,12 +5,10 @@ PUT /cities
     "city": {
       "properties": {
         "city": {
-          "type": "string",
-          "index" : "not_analyzed"
+          "type": "keyword"
         },
         "location": {
-          "type": "geo_point",
-          "lat_lon": true              
+          "type": "geo_point"
         }
       }
     }

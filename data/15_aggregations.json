@@ -47,17 +47,13 @@ POST /blog/_search
               "format": "yyyy-MM-dd"
             }
           }
-        },
-        {
-          "filtered": {
-            "filter": {
-              "term": {
-                "language": "nl-NL"
-              }
-            }
-          }
         }
-      ]
+      ],
+      "filter": {
+        "term": {
+          "language": "nl-NL"
+        }
+      }
     }
   },
   "aggs": {
@@ -70,14 +66,17 @@ POST /blog/_search
     }
   }
 }
-#List the top 3 most popular cars
+#List the top 3 most popular cars.
+#The make field is mapped as a string. Strings are converted to the "text" type, which means they get analyzed.
+#The original value isn't stored in the fielddata, only the analyzed and tokenized version.
+#Luckily strings also get a custom "keyword" field that is mapped as a "keyword" type. This can be used for aggregations.
 POST /cars/_search
 {
   "size": 0, 
   "aggs": {
     "popular_cars": {
       "terms": {
-        "field": "make",
+        "field": "make.keyword",
         "size": 3
       }
     }

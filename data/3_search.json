@@ -40,7 +40,7 @@ POST /blog/_search
     }
   }
 }
-#Search for "vagrant" and "puppet". Both terms should be next to eachother
+#Search for "vagrant" and "chef". Both terms should be next to eachother
 POST /blog/_search
 {
   "query": {
