@@ -5,7 +5,7 @@ POST /blog/_search
 {
   "query": {
     "prefix": {
-      "title.raw": "My Combell Power Tips:"
+      "title.keyword": "My Combell Power Tips:"
     }
   }
 }
@@ -16,7 +16,7 @@ POST /blog/_search
     "bool": {
       "filter": {
         "prefix": {
-          "title.raw": "My Combell Power Tips:"
+          "title.keyword": "My Combell Power Tips:"
         }
       }
     }

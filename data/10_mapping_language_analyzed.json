@@ -15,7 +15,7 @@ PUT /blog/
               "type": "text",
               "analyzer": "english"
             },
-            "raw": {
+            "keyword": {
               "type": "keyword"
             }            
           }

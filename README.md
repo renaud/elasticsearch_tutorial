@@ -106,14 +106,14 @@ This data will be used in exercise 9
 ## Exercise 9: filters, full-text vs exact values
 In exercise 9 I'll show you the difference between full-text searches using queries and exact value matches using queries in filter mode.
 
-The mapping that was done in exercise 8 has made sure there is now a *"raw"* field on the title property. this means that queries on "title.raw" are treated as full-text searches and boolean filters on the regular *"title"* field are treated as exact value matches.
+The mapping that was done in exercise 8 has made sure there is now a *"keyword"* field on the title property. this means that queries on "title.keyword" are treated as full-text searches and boolean filters on the regular *"title"* field are treated as exact value matches.
 
 In one of the examples, I'll also show you how to combine multiple queries and filters.
 
 This is what we'll do in this exercise:
 
 * Use a prefix query in filter context to perform a wildcard search even if the fields are not analyzed
-* Do a standard query using the *"raw"* field
+* Do a standard query using the *"keyword"* field
 * Use a boolean query in filter mode to combine multiple filters based on the *"and"*, *"or"* & *"not"* operators
 * Use a regular boolean query and notice how the behaviour of the *(should)* clause changes
 
