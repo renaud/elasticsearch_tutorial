@@ -32,31 +32,36 @@ POST /blog/_search
     }
   }
 }
-#Number of blog posts written in Dutch per month in 2015
+#Number of blog posts written in Dutch per month in 2016
 POST /blog/_search
 {
-  "size": 0,
+  "size":0,
   "query": {
     "bool": {
-      "must": {
-        "range": {
-          "date": {
-            "gte": "2015-01-01",
-            "lte": "2015-12-31",
-            "format": "yyyy-MM-dd"
-          }
-        }
-        }
-      ],
       "filter": {
-        "term": {
-          "language": "nl-NL"
+        "bool": {
+          "must": [
+            {
+              "range": {
+                "date": {
+                  "gte": "2016-01-01",
+                  "lte": "2016-12-31",
+                  "format": "yyyy-MM-dd"
+                }
+              }
+            },
+            {
+              "term": {
+                "language": "nl"
+              }
+            }
+          ]
         }
       }
     }
   },
   "aggs": {
-    "number_of_posts_per_month_in_2015": {
+    "number_of_posts_per_month_in_2016": {
       "date_histogram": {
         "field": "date",
         "interval": "month",

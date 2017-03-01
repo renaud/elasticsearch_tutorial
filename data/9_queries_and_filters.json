@@ -42,7 +42,7 @@ POST /blog/_search
             "must": [
               {
                 "term": {
-                  "language": "en-US"
+                  "language": "en"
                 }
               },
               {
@@ -89,7 +89,7 @@ POST /blog/_search
       "must": [
         {
           "term": {
-            "language": "en-US"
+            "language": "en"
           }
         },
         {
