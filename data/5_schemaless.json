@@ -23,6 +23,32 @@ POST /blog/_search
     }
   }
 }
+
+#Perform a wildcard search for blog posts published at 11:50 AM using the analyzed date field
+POST /blog/_search
+{
+  "_source": "date",
+  "query": {
+    "wildcard": {
+      "date": {
+        "value": "*11:50*"
+      }
+    }
+  }
+}
+#Perform a wildcard search for blog posts published at 11:50 AM using the non-analyzed date field
+POST /blog/_search
+{
+  "_source": "date",
+  "query": {
+    "wildcard": {
+      "date.keyword": {
+        "value": "*11:50*"
+      }
+    }
+  }
+}
+
 #Schemaless? Not really, ElasticSearch guesses and creates a schema for you
 GET /blog/_mapping
 #Example with integers instead of numbers in a string field
