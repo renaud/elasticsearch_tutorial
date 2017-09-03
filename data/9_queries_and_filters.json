@@ -31,7 +31,7 @@ POST /blog/_search
     }
   }
 }
-#Combined multiple filters in a boolean query (must => and, must_not => not, should=> or)
+#Combined multiple filters in a boolean query (must => and, must_not => not, should => or)
 POST /blog/_search
 {
   "query": {
@@ -80,8 +80,8 @@ POST /blog/_search
   }
 }
 
-#Combined multiple queries in a boolean query (must => and, must_not => not, should=> or).
-#Should behaves differntely in query mode than in filter mode.
+#Combined multiple queries in a boolean query (must => and, must_not => not, should => or)
+#Should behave differently in query mode, than in filter mode
 POST /blog/_search
 {
   "query": {

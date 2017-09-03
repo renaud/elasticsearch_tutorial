@@ -11,12 +11,12 @@ POST /cities/city/_search
   ], 
   "query": {
     "bool": {
-      "must" : {
-        "match_all" : {}
+      "must": {
+        "match_all": {}
       },
       "filter": {
         "geo_distance": {
-          "distance":     "5km", 
+          "distance": "5km",
           "location": {
             "lat": 51.033333, 
             "lon": 2.866667

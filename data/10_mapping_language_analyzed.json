@@ -1,5 +1,5 @@
 DELETE /blog
-PUT /blog/
+PUT /blog
 {
   "mappings": {
     "post": {

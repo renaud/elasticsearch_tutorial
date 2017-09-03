@@ -7,7 +7,7 @@ POST /blog/_search
     }
   }
 }
-#Look for "work" in english analyzed field
+#Look for "work" in English analyzed field
 POST /blog/_search
 {
   "query": {
@@ -25,7 +25,7 @@ POST /blog/_search
     }
   }
 }
-#Look for "werk" in dutch analyzed field
+#Look for "werk" in Dutch analyzed field
 POST /blog/_search
 {
   "query": {
