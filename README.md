@@ -186,7 +186,7 @@ These are the aggregations we'll execute in this exercise:
 * Get the top 3 most popular cars
 * Get the average price of a sold car
 * Get extended statistics on the price of a sold car
-* Get the total revenue for cars per price range, within an interval of 20000 USD
+* Get the total revenue for cars per price range, with an interval of 20000 USD
 * Calculate the average price of a Ford, versus the total average price of all the cars that were sold
 
 [Load exercise 15](http://localhost:5601/app/kibana#/dev_tools/console?load_from=https://raw.githubusercontent.com/ThijsFeryn/elasticsearch_tutorial/master/data/15_aggregations.json)
