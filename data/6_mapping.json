@@ -1,14 +1,14 @@
 DELETE /blog
-PUT /blog/
+PUT /blog
 {
-  "mappings" : {
-    "post" : {
+  "mappings": {
+    "post": {
       "properties": {
-        "title" : {
-          "type" : "text"
+        "title": {
+          "type": "text"
         },
-        "date"  : {
-          "type" : "date",
+        "date" : {
+          "type": "date",
           "format": "E, dd MMM YYYY HH:mm:ss Z"
         },
         "author": {
