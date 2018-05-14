@@ -106,7 +106,7 @@ This data will be used in exercise 9.
 ## Exercise 9: filters, full-text vs. exact values
 In exercise 9, I'll show you the difference between full-text searches using queries and exact value matches using queries in filter mode.
 
-The mapping that was done in exercise 8 has made sure there is now a *"keyword"* field on the title property. This means that queries on *"title.keyword"* are treated as full-text searches and boolean filters on the regular *"title"* field are treated as exact value matches.
+The mapping that was done in exercise 8 has made sure there is now a *"keyword"* field on the title property. This means that queries on *"title"* are treated as full-text searches and boolean filters on the regular *"title.keyword"* field are treated as exact value matches.
 
 In one of the examples, I'll also show you how to combine multiple queries and filters.
 
