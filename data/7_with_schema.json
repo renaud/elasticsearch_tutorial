@@ -10,6 +10,7 @@ POST /blog/_search
     }
   }
 }
+
 #Find blog posts that have an id between 6150 and 6200, with correct schema
 POST /blog/_search
 {
@@ -22,6 +23,7 @@ POST /blog/_search
     }
   }
 }
+
 #Find blog posts written in January 2016, with correct schema
 POST /blog/_search
 {

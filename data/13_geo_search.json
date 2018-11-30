@@ -27,6 +27,7 @@ POST /cities/city/_search
     }  
   }
 }
+
 #Draw a bounding box that contains Koksijde & Nieuwpoort
 POST /cities/city/_search
 {

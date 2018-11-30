@@ -1,4 +1,4 @@
-DELETE /cars
+#DELETE /cars
 POST /cars/transactions/_bulk
 { "index": {}}
 { "price" : 10000, "color" : "red", "make" : "honda", "sold" : "2014-10-28" }

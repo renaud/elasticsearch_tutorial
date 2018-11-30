@@ -1,25 +1,43 @@
-POST /_analyze
-{
-  "analyzer": "standard",
-  "text": "Hey man, how are you doing?"
-}
+# whitespace analyzer
+# https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-whitespace-analyzer.html
 POST /_analyze
 {
   "analyzer": "whitespace",
   "text": "Hey man, how are you doing?"
 }
+
+# standard analyzer (default)
+# https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-standard-analyzer.html
+POST /_analyze
+{
+  "analyzer": "standard",
+  "text": "Hey man, how are you doing?"
+}
+
+# english analyzer
+# https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-lang-analyzer.html#english-analyzer
+POST /_analyze
+{
+  "analyzer": "english",
+  "text": "This is so good, I can not believe it!!"
+}
+
 POST /_analyze
 {
   "analyzer": "english",
   "text": "Hey man, how are you doing?"
 }
+
+# german analyzer
+# https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-lang-analyzer.html#german-analyzer
 POST /_analyze
 {
-  "analyzer": "dutch",
+  "analyzer": "german",
   "text": "Hey man, how are you doing?"
 }
+
 POST /_analyze
 {
-  "analyzer": "dutch",
-  "text": "De koetsier poetst de postkoets met postkoetspoets"
+  "analyzer": "german",
+  "text": "Ich bin ein Berliner"
 }

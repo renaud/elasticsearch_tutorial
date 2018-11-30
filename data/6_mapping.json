@@ -1,4 +1,8 @@
+
+# delete this index
 DELETE /blog
+
+# put a new schema, with date and guid specified
 PUT /blog
 {
   "mappings": {
@@ -25,6 +29,8 @@ PUT /blog
     }
   }
 }
+
+# you need to reindex the whole content...
 POST /_bulk
 {"index":{"_index":"blog","_type":"post","_id":"6581"}}
 {"language":"en","title":"Combell won the Twinkle Award in the \u201cHosting & Domain\u201d category!","date":"Fri, 09 Dec 2016 09:30:27 +0000","author":"Combell","category":["Combell news","award","awards","Combell","twinkle"],"guid":"6581"}
